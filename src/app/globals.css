@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: linear-gradient(120deg, #06b6d4 0%, #0ea5e9 100%);
+  color: #e0f2fe;
+  font-family: "Inter", "Geist", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Geist", "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.game-card {
+  background: rgba(6, 182, 212, 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.15),
+    0 1.5px 8px rgba(6, 182, 212, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.game-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 40px rgba(14, 165, 233, 0.25),
+    0 2px 12px rgba(6, 182, 212, 0.18);
+}
+.game-card img {
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+.game-card .game-title {
+  color: #06b6d4;
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.game-card .game-summary {
+  color: #bae6fd;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.game-card .game-rating {
+  color: #0ea5e9;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
